@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jam Digital</title>
+    <div class="clock" id="clock">00:00:00</div>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #38bdf8;
+            font-family: 'poppins',sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .clock {
+            font-size: 80px;
+            letter-spacing: 5px;
+            text-shadow: 0 0 20px #38bdf8;
+
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2,'0');
+            const minutes = String(now.getMinutes()).padStart(2,'0');
+            const seconds = String(now.getSeconds()).padStart(2,'0');
+            document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
